@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/homete/static/css/main.6d449771.css",
+    "main.js": "/homete/static/js/main.25bb69e4.js",
+    "index.html": "/homete/index.html",
+    "main.6d449771.css.map": "/homete/static/css/main.6d449771.css.map",
+    "main.25bb69e4.js.map": "/homete/static/js/main.25bb69e4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d449771.css",
+    "static/js/main.25bb69e4.js"
+  ]
+}
