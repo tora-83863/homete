@@ -73,9 +73,7 @@ const MainPage = () => {
         // テキスト入力の場合
         setInputText("");
         const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-        result = await model.generateContent([
-          `次の内容を褒めてください。「${inputText}」`,
-        ]);
+        result = await model.generateContent(`次の内容を褒めてください。「${inputText}」`,);
         const response = await result.response;
         systemMessage.content = response.text();
       } else {
@@ -103,9 +101,12 @@ const MainPage = () => {
     }
   };
 
+  // 画像データをbase64形式に変換し、APIリクエストに含められるPartを生成する
   async function fileToGenerativePart(file: File) {
-    const reader = new FileReader();
+    // 画像を1MBまで圧縮する
     const compressFile = await imageCompression(file, { maxSizeMB: 1 });
+
+    const reader = new FileReader();
     reader.readAsDataURL(compressFile);
     const base64EncodedDataPromise = new Promise((resolve) => {
       const reader = new FileReader();
